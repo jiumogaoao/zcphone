@@ -1,9 +1,9 @@
 // JavaScript Document
 ;(function(obj){
 	obj.set({
-		name:"index",
+		name:"about",
 		par:"a/b/f/e/k",
-		tem:["index"],
+		tem:["about"],
 		fn:function(data){
 			$("#scroller").html(data.tem[0]);
 			myScroll.refresh();
