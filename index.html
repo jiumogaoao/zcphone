@@ -34,6 +34,11 @@
 <script src="control/procedure.js"></script>
 <script src="control/product.js"></script>
 <script src="control/register.js"></script>
+<script src="control/team.js"></script>
+<script src="control/company.js"></script>
+<script src="control/idea.js"></script>
+<script src="control/announcement.js"></script>
+<script src="control/recruit.js"></script>
 <script
 	src="bootstrap/js/bootstrap.min.js"></script>
     <script src="js/iscroll.js"></script>
@@ -149,6 +154,15 @@ document.addEventListener('touchmove', function (e) { e.preventDefault(); }, fal
 .nopadding{
 	padding:0px;
 	}
+.panle{
+	background-color:#FFFFFF;
+	box-shadow:.3rem .3rem .3rem rgba(0,0,0,0.3)}
+.panleTop{
+	height:1rem;
+	line-height:1rem;
+	color:#FFFFFF;
+	background-color:#1EACE8}
+
 </style>
 </head>
 
@@ -178,7 +192,7 @@ document.addEventListener('touchmove', function (e) { e.preventDefault(); }, fal
         	<div class="nav" D_type="nav">我的房产</div>
             <div class="navList">
             	<div class="navPoint" D_type="navPoint" D_data="about">关于我们</div>
-            	<div class="navPoint" D_type="navPoint" D_data="account">我的房产</div>
+            	<div class="navPoint" D_type="navPoint" D_data="account">我的账户</div>
             </div>
         </div>
         <div class="col-xs-4" style="position:relative">
