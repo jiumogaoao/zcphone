@@ -93,7 +93,7 @@ document.addEventListener('touchmove', function (e) { e.preventDefault(); }, fal
 	top: 2rem;
 	bottom: 2rem;
 	left: 0;
-	background-color:#fff;
+	background-color:#F5F6FD;
 	width:100%;
 	overflow:hidden;
 	-webkit-transform: translateZ(0);
@@ -115,8 +115,8 @@ document.addEventListener('touchmove', function (e) { e.preventDefault(); }, fal
 	#scroller {
 	position: absolute;
 	z-index: 1;
+	width:100%;
 	-webkit-tap-highlight-color: rgba(0,0,0,0);
-	width: 100%;
 	-webkit-transform: translateZ(0);
 	-moz-transform: translateZ(0);
 	-ms-transform: translateZ(0);
@@ -132,6 +132,7 @@ document.addEventListener('touchmove', function (e) { e.preventDefault(); }, fal
 	-ms-text-size-adjust: none;
 	-o-text-size-adjust: none;
 	text-size-adjust: none;
+	padding-bottom:1rem;
 }
 .navList{
 	width:100%;
@@ -145,6 +146,9 @@ document.addEventListener('touchmove', function (e) { e.preventDefault(); }, fal
 	width:100%;
 	border-bottom:1px solid #C36905;
 	}
+.nopadding{
+	padding:0px;
+	}
 </style>
 </head>
 
@@ -153,11 +157,11 @@ document.addEventListener('touchmove', function (e) { e.preventDefault(); }, fal
 	<div class="row">
         <div class="col-xs-2">返回</div>
         <div class="col-xs-8">标题</div>
-        <div class="col-xs-2">注册</div>
+        <div class="col-xs-2" D_type="navPoint" D_data="register">注册</div>
     </div>
 </div>
-<div id="middle" class="container">
-<div id="scroller">
+<div id="middle">
+<div id="scroller" class="container">
 
 	</div>
 </div>
