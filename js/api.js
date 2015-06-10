@@ -31,7 +31,7 @@
 							error:function(){
 								err();
 								},
-							success: function(returnData){
+							success: function(returnData){debugger;
 								if(returnData&&returnData.code!=0){
 									if(returnData.code==1){
 										api[name].cache=returnData.data;
@@ -51,6 +51,6 @@
 		add(name,url,data,method);
 		}
 	obj.run=function(name,data,suc,err){
-		run(name,fn);
+		run(name,data,suc,err);
 		}
 	})(app.api);
