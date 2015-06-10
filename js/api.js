@@ -21,19 +21,21 @@
 				data.time=api[name].cacheTime;
 				data=JSON.stingify(data);
 				}
+				var sendData=$.extend({},api[name].data);
+				sendData.data=data;
 			$.ajax({ 
 							url:api[name].url,
 							dataType:"json",
 							method:api[name].method,
-							data:data,
+							data:sendData,
 							error:function(){
 								err();
 								},
-							success: function(data){
-								if(data&&data.code!=0){
-									if(data.code==1){
-										api[name].cache=data.data;
-										api[name].cacheTime=data.time;
+							success: function(returnData){
+								if(returnData&&returnData.code!=0){
+									if(returnData.code==1){
+										api[name].cache=returnData.data;
+										api[name].cacheTime=returnData.time;
 										}
 									suc($.extend({},api[name].cache));
 								}else{
@@ -46,7 +48,7 @@
 				}
 		}
 	obj.add=function(name,url,data,method){
-		add(name,url,data,cache,method);
+		add(name,url,data,method);
 		}
 	obj.run=function(name,data,suc,err){
 		run(name,fn);
