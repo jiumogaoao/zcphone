@@ -1,41 +1,11 @@
 <div class="clearfix" style="margin-top:1rem"></div>
-<div class="panel panel-primary"><div class="panel-heading">这个那个</div>
+<% _.each(data,function(com){ %>
+	<div class="panel panel-primary"><div class="panel-heading"><%= com.title %></div>
       <div class="panel-body" style="background-color: #FFFFFF;padding-bottom: .5rem;padding-top: .5rem;">
-      	很多很多内容很多很多内容很多很多内容很多很多内容很多很多内容很多很多内容很多很多内容很多很多内容很多很多内容很多很多内容很多很多内容很多很多内容很多很多内容很多很多内容很多很多内容很多很多内容很多很多内容很多很多内容很多很多内容很多很多内容
-    	
-    
+      	<%= com.message %>
       </div>
       <div class="panel-footer">
-      	2015/05/22-2017/05/22
+      	<% print(moment(com.start).format("YYYY/MM/DD")) %>-<% print(moment(com.end).format("YYYY/MM/DD")) %>
       </div>
     </div>
-<div class="panel panel-primary"><div class="panel-heading">这个那个</div>
-      <div class="panel-body" style="background-color: #FFFFFF;padding-bottom: .5rem;padding-top: .5rem;">
-      	很多很多内容很多很多内容很多很多内容很多很多内容很多很多内容很多很多内容很多很多内容很多很多内容很多很多内容很多很多内容很多很多内容很多很多内容很多很多内容很多很多内容很多很多内容很多很多内容很多很多内容很多很多内容很多很多内容很多很多内容
-    	
-    
-      </div>
-      <div class="panel-footer">
-      	2015/05/22-2017/05/22
-      </div>
-    </div>
-<div class="panel panel-primary"><div class="panel-heading">这个那个</div>
-      <div class="panel-body" style="background-color: #FFFFFF;padding-bottom: .5rem;padding-top: .5rem;">
-      	很多很多内容很多很多内容很多很多内容很多很多内容很多很多内容很多很多内容很多很多内容很多很多内容很多很多内容很多很多内容很多很多内容很多很多内容很多很多内容很多很多内容很多很多内容很多很多内容很多很多内容很多很多内容很多很多内容很多很多内容
-    	
-    
-      </div>
-      <div class="panel-footer">
-      	2015/05/22-2017/05/22
-      </div>
-    </div>
-<div class="panel panel-primary"><div class="panel-heading">这个那个</div>
-      <div class="panel-body" style="background-color: #FFFFFF;padding-bottom: .5rem;padding-top: .5rem;">
-      	很多很多内容很多很多内容很多很多内容很多很多内容很多很多内容很多很多内容很多很多内容很多很多内容很多很多内容很多很多内容很多很多内容很多很多内容很多很多内容很多很多内容很多很多内容很多很多内容很多很多内容很多很多内容很多很多内容很多很多内容
-    	
-    
-      </div>
-      <div class="panel-footer">
-      	2015/05/22-2017/05/22
-      </div>
-    </div>
+<% }); %>

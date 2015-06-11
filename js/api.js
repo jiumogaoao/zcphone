@@ -17,9 +17,9 @@
 			if(!data){
 				data=api[name].cacheTime
 				}
-			if(data&&typeof(data)=="obj"){
+			if(data&&typeof(data)=="object"){
 				data.time=api[name].cacheTime;
-				data=JSON.stingify(data);
+				data=JSON.stringify(data);
 				}
 				var sendData=$.extend({},api[name].data);
 				sendData.data=data;
@@ -31,7 +31,7 @@
 							error:function(){
 								err();
 								},
-							success: function(returnData){debugger;
+							success: function(returnData){
 								if(returnData&&returnData.code!=0){
 									if(returnData.code==1){
 										api[name].cache=returnData.data;
