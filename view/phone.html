@@ -3,14 +3,18 @@
     <label for="inputEmail3" class="col-xs-10 col-xs-offset-1 control-label">请输入新手机号</label>
     <div class="clearfix"></div>
     <div class="col-xs-10 col-xs-offset-1">
-      <input type="text" class="form-control" id="inputEmail3" placeholder="Email">
+      <input type="text" id="phoneNumber" class="form-control" placeholder="请输入新手机号" value="<%= data.phone %>">
     </div>
   </div>
   <div class="form-group row" style="margin-top:2rem;">
     <label for="inputEmail3" class="col-xs-10 col-xs-offset-1 control-label">请输入验证码</label>
     <div class="clearfix"></div>
-    <div class="col-xs-10 col-xs-offset-1">
-      <input type="text" class="form-control" id="inputEmail3" placeholder="Email">
+    <div class="col-xs-6 col-xs-offset-1">
+      <input type="text" id="msgValidCode" class="form-control" placeholder="请输入验证码">
     </div>
+    <button type="button" id="btnSendmsg" class="btn btn-default col-xs-3">获取验证码</button>
+  </div>
+  <div class="form-group row" style="margin-top:2rem;">
+  	<button type="button" class="btn btn-primary col-xs-10 col-xs-offset-1 bankcard_confirm">提交绑定</button>
   </div>
   </form>

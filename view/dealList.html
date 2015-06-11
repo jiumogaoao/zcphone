@@ -1,96 +1,43 @@
 <div class="clearfix" style="margin-top:1rem"></div>
+<% _.each(data,function(deal){ %>
 <table class="table table-bordered">
 
                   <tr>
                     <td width="30%">订单编号</td>
-                    <td>&nbsp;</td>
+                    <td><%= deal.id %></td>
                     </tr>
                     <tr>
                     <td>商品名</td>
-                    <td>&nbsp;</td>
+                    <td><%= deal.title %>-<%= deal.subhead %></td>
                     </tr>
                     <tr>
                     <td>交易日期</td>
-                    <td>&nbsp;</td>
+                    <td><% print(moment(deal.startTime).format("YYYY/MM/DD")) %></td>
                     </tr>
                     <tr>
 					<td>金额</td>
-                    <td>&nbsp;</td>
+                    <td>-<% print(deal.buyPrice*deal.count) %></td>
                     </tr>
 </table>
-<table class="table table-bordered">
+<% if(deal.endTime){ %>
+	<table class="table table-bordered">
 
                   <tr>
                     <td width="30%">订单编号</td>
-                    <td>&nbsp;</td>
+                    <td><%= deal.id %></td>
                     </tr>
                     <tr>
                     <td>商品名</td>
-                    <td>&nbsp;</td>
+                    <td><%= deal.title %>-<%= deal.subhead %></td>
                     </tr>
                     <tr>
                     <td>交易日期</td>
-                    <td>&nbsp;</td>
+                    <td><% print(moment(deal.endTime).format("YYYY/MM/DD")) %></td>
                     </tr>
                     <tr>
 					<td>金额</td>
-                    <td>&nbsp;</td>
+                    <td><% print(deal.sellPrice*deal.count) %></td>
                     </tr>
 </table>
-<table class="table table-bordered">
-
-                  <tr>
-                    <td width="30%">订单编号</td>
-                    <td>&nbsp;</td>
-                    </tr>
-                    <tr>
-                    <td>商品名</td>
-                    <td>&nbsp;</td>
-                    </tr>
-                    <tr>
-                    <td>交易日期</td>
-                    <td>&nbsp;</td>
-                    </tr>
-                    <tr>
-					<td>金额</td>
-                    <td>&nbsp;</td>
-                    </tr>
-</table>
-<table class="table table-bordered">
-
-                  <tr>
-                    <td width="30%">订单编号</td>
-                    <td>&nbsp;</td>
-                    </tr>
-                    <tr>
-                    <td>商品名</td>
-                    <td>&nbsp;</td>
-                    </tr>
-                    <tr>
-                    <td>交易日期</td>
-                    <td>&nbsp;</td>
-                    </tr>
-                    <tr>
-					<td>金额</td>
-                    <td>&nbsp;</td>
-                    </tr>
-</table>
-<table class="table table-bordered">
-
-                  <tr>
-                    <td width="30%">订单编号</td>
-                    <td>&nbsp;</td>
-                    </tr>
-                    <tr>
-                    <td>商品名</td>
-                    <td>&nbsp;</td>
-                    </tr>
-                    <tr>
-                    <td>交易日期</td>
-                    <td>&nbsp;</td>
-                    </tr>
-                    <tr>
-					<td>金额</td>
-                    <td>&nbsp;</td>
-                    </tr>
-</table>
+<% } %>
+<% }) %>

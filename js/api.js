@@ -37,7 +37,12 @@
 										api[name].cache=returnData.data;
 										api[name].cacheTime=returnData.time;
 										}
-									suc($.extend({},api[name].cache));
+									if(typeof(api[name].cache)=="obj"){
+										suc($.extend({},api[name].cache));
+										}else{
+											suc(api[name].cache);
+											}
+									
 								}else{
 									err();
 									}

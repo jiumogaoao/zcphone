@@ -5,13 +5,18 @@
 		par:"a/b/f/e/k",
 		tem:["account"],
 		fn:function(data){
-			$("#scroller").html(data.tem[0]);
+			if(app.cookies("user")){
+				$("#scroller").html(data.tem[0]);
 			$("#scroller").find("[D_type='navPoint']").each(function(){
 				$(this).unbind("touchstart").bind("touchstart",function(){
 					window.location.hash=$(this).attr("D_data");
 					})
 				});
 			myScroll.refresh();
+				}else{
+					alert("请先登录");
+					window.location.hash="index";
+					}
 			}
 		})
 	})(app.control);

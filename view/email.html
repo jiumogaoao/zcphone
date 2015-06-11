@@ -3,7 +3,10 @@
     <label for="inputEmail3" class="col-xs-10 col-xs-offset-1 control-label">请输入邮箱地址</label>
     <div class="clearfix"></div>
     <div class="col-xs-10 col-xs-offset-1">
-      <input type="text" class="form-control" id="inputEmail3" placeholder="Email">
+      <input type="text" class="form-control" placeholder="请输入要绑定的邮箱地址" value="<%= data.email %>" id="email">
     </div>
+  </div>
+  <div class="form-group row" style="margin-top:1rem;">
+    <button type="button" class="btn btn-primary col-xs-10 col-xs-offset-1"><% if(data.bind.email){print("提交修改")}else{print("绑定邮箱")} %></button>
   </div>
   </form>

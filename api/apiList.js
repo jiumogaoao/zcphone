@@ -24,9 +24,9 @@ app.api.add("getBindCode","http://"+config.sour+":8888/",{model:"client",action:
 /*绑定*/
 app.api.add("bind","http://"+config.sour+":8888/",{model:"client",action:"bind"},"get");
 /*获取安全问题*/
-app.api.add("bind","http://"+config.sour+":8888/",{model:"client",action:"getSafeQusetion"},"get");
+app.api.add("getSafeQusetion","http://"+config.sour+":8888/",{model:"client",action:"getSafeQusetion"},"get");
 /*设置安全问题*/
-app.api.add("setSafeQusetion","http://"+config.sour+":8888/",{model:"client",action:"getSafeQusetion"},"get");
+app.api.add("setSafeQusetion","http://"+config.sour+":8888/",{model:"client",action:"setSafeQusetion"},"get");
 /*验证安全问题*/
 app.api.add("checkSafeQusetion","http://"+config.sour+":8888/",{model:"client",action:"checkSafeQusetion"},"get");
 /*获取公告*/
