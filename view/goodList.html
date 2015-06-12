@@ -2,14 +2,13 @@
 <% _.each(data,function(deal){
 	if(!deal.endTime){
  %>
+ <div class="panel panel-primary">
+  <div class="panel-heading">编号:<%= deal.id %></div>
+  <div class="panel-body">
+    <div class="table-responsive">
 <table class="table table-bordered">
-
-                  <tr>
-                    <td width="30%">编号</td>
-                    <td><%= deal.id %></td>
-                    </tr>
                     <tr>
-                    <td>商品名</td>
+                    <td width="30%">商品名</td>
                     <td><%= deal.title %>-<%= deal.subhead %></td>
                     </tr>
                     <tr>
@@ -28,15 +27,15 @@
                     <td>利润</td>
                     <td><% print((deal.minUnit-deal.buyPrice)*deal.count) %></td>
                     </tr>
-                    <tr>
-					<td>卖出</td>
-                    <td>&nbsp;</td>
-                    </tr>
-                    <tr>
-					<td>债权转让</td>
-                    <td>&nbsp;</td>
-                  </tr>
 
 </table>
+</div>
+  </div>
+  <div class="panel-footer">
+  	<button type="button" class="btn btn-danger col-xs-5" D_type="sellButton" D_data="<%= deal.id %>">卖出</button>
+    <button type="button" class="btn btn-warning col-xs-5 pull-right" D_type="changeButton" D_data="<%= deal.id %>">债权转让</button>
+    <div class="clearfix"></div>
+  </div>
+</div>
 <% }
 }); %>

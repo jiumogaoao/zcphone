@@ -1,0 +1,27 @@
+<div class="panel panel-primary">
+  <div class="panel-heading">请确认订单并支付</div>
+  <div class="panel-body">
+    <div class="table-responsive">
+  <table class="table table-bordered">
+    <tr>
+    	<td width="30%">编号</td><td><%= data.id %></td>
+    </tr>
+    <tr>
+    	<td width="30%">商品名</td><td><%= data.title %>-<%= data.subhead %></td>
+    </tr>
+    <tr>
+    	<td width="30%">现价</td><td><%= data.buyPrice %></td>
+    </tr>
+    <tr>
+    	<td width="30%">购买份数</td><td><%= data.count %></td>
+    </tr>
+    <tr>
+    	<td width="30%">支付金额</td><td><% print(data.buyPrice*data.count) %></td>
+    </tr>
+  </table>
+</div>
+  </div>
+  <div class="panel-footer">
+  	<button type="button" class="btn btn-primary">确认并支付</button>
+  </div>
+</div>

@@ -18,6 +18,12 @@
 					var dealTemplate=_.template(data.tem[0])({data:dealList});
 					$("#scroller").html(dealTemplate);
 			myScroll.refresh();	
+					$("#scroller").find("[D_type='sellButton']").unbind("touchstart").bind("touchstart",function(){
+						window.location.hash="sell/"+$(this).attr("D_data")
+						})
+					$("#scroller").find("[D_type='changeButton']").unbind("touchstart").bind("touchstart",function(){
+						window.location.hash="change/"+$(this).attr("D_data")
+						})
 					},function(){
 					alert("获取交易信息失败")
 					})
