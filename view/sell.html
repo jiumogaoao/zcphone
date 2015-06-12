@@ -10,18 +10,21 @@
     	<td width="30%">商品名</td><td><%= data.title %>-<%= data.subhead %></td>
     </tr>
     <tr>
-    	<td width="30%">现价</td><td><%= data.buyPrice %></td>
+    	<td width="30%">买入现价</td><td><%= data.buyPrice %></td>
+    </tr>
+    <tr>
+    	<td width="30%">现价</td><td><%= data.sellPrice %></td>
     </tr>
     <tr>
     	<td width="30%">购买份数</td><td><%= data.count %></td>
     </tr>
     <tr>
-    	<td width="30%">支付金额</td><td><% print(data.buyPrice*data.count) %></td>
+    	<td width="30%">结算金额</td><td><% print(data.sellPrice*data.count) %></td>
     </tr>
   </table>
 </div>
   </div>
   <div class="panel-footer">
-  	<button type="button" class="btn btn-primary">确认并支付</button>
+  	<button type="button" class="btn btn-primary" D_type="sellbutton">确认并支付</button>
   </div>
 </div>

@@ -1,2 +1,35 @@
-<div>change</div>
-
+<div class="panel panel-primary">
+  <div class="panel-heading">请确认订单并支付</div>
+  <div class="panel-body">
+    <div class="table-responsive">
+  <table class="table table-bordered">
+    <tr>
+    	<td width="30%">编号</td><td><%= data.id %></td>
+    </tr>
+    <tr>
+    	<td width="30%">商品名</td><td><%= data.title %>-<%= data.subhead %></td>
+    </tr>
+    <tr>
+    	<td width="30%">买入现价</td><td><%= data.buyPrice %></td>
+    </tr>
+    <tr>
+    	<td width="30%">现价</td><td><%= data.sellPrice %></td>
+    </tr>
+    <tr>
+    	<td width="30%">购买份数</td><td><%= data.count %></td>
+    </tr>
+    <tr>
+    	<td width="30%">转让手续费</td><td><%= data.change %></td>
+    </tr>
+    <tr>
+    	<td width="30%">手续费合计</td><td><% print(data.change*data.count) %></td>
+    </tr>
+  </table>
+</div>
+  </div>
+  <div class="panel-footer row">
+  <div class="col-xs-12">请输入转入账号用户名</div>
+	<div class="col-xs-6"><input formtype="simple" D_data="changeMember" D_type="simple"/></div>
+  	<button type="button" class="btn btn-primary col-xs-6" D_type="changebutton">确认转让</button>
+  </div>
+</div>
