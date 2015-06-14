@@ -232,6 +232,7 @@ var myScroll = new IScroll('#middle', { scrollbars: true,
 		function(){
 			$(this).unbind("touchstart").bind("touchstart",function(e){
 				e.stopPropagation();
+				$(".navList").hide();
 				$(this).parents(".col-xs-4").find(".navList").show();
 			})
 		})

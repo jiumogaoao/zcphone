@@ -45,7 +45,7 @@
 				alert("获取交易信息失败");
 				});
 				}
-			app.api.run("getdealList",app.cookies("user").id,function(deal){debugger;
+			app.api.run("getdealList",app.cookies("user").id,function(deal){
 				deal=_.indexBy(deal,"id");
 				getproduct(deal[data.id])
 				},function(){
