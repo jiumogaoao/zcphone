@@ -5,6 +5,12 @@
 		par:"id/count/f/e/k",
 		tem:["buy"],
 		fn:function(data){
+			$("#leftButton").hide();
+			$("#centerTitle").html("请确认购买");
+			$("#rightButton").html("返回");
+			$("#rightButton").unbind("click").bind("click",function(){
+				window.history.go(-1)
+				});
 			app.api.run("getProduct",null,function(product){
 				product=_.indexBy(product,"id");
 				console.log(product[data.id])

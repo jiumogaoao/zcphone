@@ -5,7 +5,12 @@
 		par:"a/b/f/e/k",
 		tem:["dealList"],
 		fn:function(data){
-			
+			$("#leftButton").hide();
+			$("#centerTitle").html("收支记录");
+			$("#rightButton").html("返回");
+			$("#rightButton").unbind("click").bind("click",function(){
+				window.history.go(-1)
+				});
 			function getDeal(product){
 				app.api.run("getdealList",app.cookies("user").id,function(dealList){
 					if(dealList){

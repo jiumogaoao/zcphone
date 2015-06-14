@@ -5,6 +5,12 @@
 		par:"a/b/f/e/k",
 		tem:["userDetail"],
 		fn:function(data){
+			$("#leftButton").hide();
+			$("#centerTitle").html("基本信息");
+			$("#rightButton").html("返回");
+			$("#rightButton").unbind("click").bind("click",function(){
+				window.history.go(-1)
+				});
 			var user=app.cookies("user")
 			var userTemplate=_.template(data.tem[0])({data:user});
 			$("#scroller").html(userTemplate);

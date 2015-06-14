@@ -5,6 +5,12 @@
 		par:"a/b/f/e/k",
 		tem:["email"],
 		fn:function(data){
+			$("#leftButton").hide();
+			$("#centerTitle").html("绑定邮箱");
+			$("#rightButton").html("返回");
+			$("#rightButton").unbind("click").bind("click",function(){
+				window.history.go(-1)
+				});
 			var user=app.cookies("user")
 			app.api.run("getBind",user.id,function(bind){
 				user.bind=bind;

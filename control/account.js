@@ -5,6 +5,13 @@
 		par:"a/b/f/e/k",
 		tem:["account"],
 		fn:function(data){
+
+					$("#leftButton").hide();
+			$("#centerTitle").html("个人中心");
+			$("#rightButton").html("返回");
+			$("#rightButton").unbind("click").bind("click",function(){
+				window.history.go(-1)
+				});
 			if(app.cookies("user")){
 				$("#scroller").html(data.tem[0]);
 			$("#scroller").find("[D_type='navPoint']").each(function(){

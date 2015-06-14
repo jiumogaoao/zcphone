@@ -5,6 +5,12 @@
 		par:"id/count/f/e/k",
 		tem:["change"],
 		fn:function(data){
+			$("#leftButton").hide();
+			$("#centerTitle").html("请确认转让");
+			$("#rightButton").html("返回");
+			$("#rightButton").unbind("click").bind("click",function(){
+				window.history.go(-1)
+				});
 			function getproduct(deal){
 				app.api.run("getProduct",null,function(product){
 				product=_.indexBy(product,"id");

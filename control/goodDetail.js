@@ -5,6 +5,21 @@
 		par:"id/b/f/e/k",
 		tem:["goodDetail"],
 		fn:function(data){
+			if(!app.cookies("user")){
+				$("#leftButton").show();
+			$("#leftButton").html("登录");
+			$("#leftButton").unbind("click").bind("click",function(){
+				window.location.hash="index";
+				});
+				}else{
+					$("#leftButton").hide();
+					}
+			
+			$("#centerTitle").html("产品详情");
+			$("#rightButton").html("返回");
+			$("#rightButton").unbind("click").bind("click",function(){
+				window.history.go(-1)
+				});
 			app.api.run("getProduct",null,function(product){
 				product=_.indexBy(product,"id");
 				console.log(product[data.id])

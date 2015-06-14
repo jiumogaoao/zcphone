@@ -5,6 +5,11 @@
 		par:"a/b/f/e/k",
 		tem:["index"],
 		fn:function(data){
+			$("#leftButton").hide();
+			$("#centerTitle").html("星众众筹");
+			$("#rightButton").unbind("click").bind("click",function(){
+				window.location.hash="register";
+				});
 			$("#scroller").html(data.tem[0]);
 			myScroll.refresh();
 			$("#scroller").find("#send").unbind("click").bind("click",function(){

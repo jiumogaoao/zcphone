@@ -5,6 +5,12 @@
 		par:"a/b/f/e/k",
 		tem:["register"],
 		fn:function(data){
+			$("#leftButton").hide();
+			$("#centerTitle").html("请填写基本信息并注册");
+			$("#rightButton").html("登录");
+			$("#rightButton").unbind("click").bind("click",function(){
+				window.location.hash="index";
+				});
 			var code="";
 		var userCheck=false;
 		var phoneCheck=false;

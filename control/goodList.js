@@ -5,6 +5,12 @@
 		par:"a/b/f/e/k",
 		tem:["goodList"],
 		fn:function(data){
+			$("#leftButton").hide();
+			$("#centerTitle").html("我的众筹");
+			$("#rightButton").html("返回");
+			$("#rightButton").unbind("click").bind("click",function(){
+				window.history.go(-1)
+				});
 			function getDeal(product){
 				app.api.run("getdealList",app.cookies("user").id,function(dealList){
 					if(dealList){

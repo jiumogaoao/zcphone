@@ -5,6 +5,12 @@
 		par:"a/b/f/e/k",
 		tem:["password"],
 		fn:function(data){
+			$("#leftButton").hide();
+			$("#centerTitle").html("重置密码");
+			$("#rightButton").html("返回");
+			$("#rightButton").unbind("click").bind("click",function(){
+				window.history.go(-1)
+				});
 			$("#scroller").html(data.tem[0]);
 			myScroll.refresh();
 			var sendData={id:app.cookies("user").id,/*用户id*/

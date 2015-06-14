@@ -27,7 +27,7 @@
 							url:"view/"+n+".html",
 							dataType:"html",
 							error:function(err){
-								alert("错误"+err);
+								alert("错误"+JSON.stringify(err));
 								},
 							success: function(data){								
 							urlArry[urlNum]=data;
