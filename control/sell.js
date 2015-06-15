@@ -15,7 +15,7 @@
 				app.api.run("getProduct",null,function(product){
 				product=_.indexBy(product,"id");
 				console.log(product[deal.productId])
-				deal.sellPrice=product[deal.productId].minUnit;
+				deal.sellPrice=product[deal.productId].UnitPrice;
 				deal.title=product[deal.productId].title;
 				deal.subhead=product[deal.productId].subhead;
 				var detailTemplate=_.template(data.tem[0])({data:deal});

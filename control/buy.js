@@ -21,7 +21,7 @@
 								subhead:product[data.id].subhead,
 								count:Number(data.count),
 								startTime:new Date().getTime(),
-								buyPrice:product[data.id].minUnit,
+								buyPrice:product[data.id].UnitPrice,
 								endTime:null,
 								sellPrice:null}
 				var detailTemplate=_.template(data.tem[0])({data:dealData});
