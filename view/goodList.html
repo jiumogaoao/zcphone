@@ -33,7 +33,11 @@
   </div>
   <div class="panel-footer">
   	<button type="button" class="btn btn-danger col-xs-5" D_type="sellButton" D_data="<%= deal.id %>">卖出</button>
+    <% if(config.change){ %>
     <button type="button" class="btn btn-warning col-xs-5 pull-right" D_type="changeButton" D_data="<%= deal.id %>">债权转让</button>
+    <% } %>
+    
+    
     <div class="clearfix"></div>
   </div>
 </div>

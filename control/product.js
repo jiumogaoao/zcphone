@@ -21,13 +21,18 @@
 				window.location.hash="register";
 				});
 			app.api.run("getProduct",null,function(product){
-				var productData={data:product}
+				app.api.run("getConfig",function(con){
+					var productData={data:product,config:con}
 				var productTemplate=_.template(data.tem[0])(productData);
 				$("#scroller").html(productTemplate);
 				$("#scroller").find(".product").unbind("touchstart").bind("touchstart",function(){
 					window.location.hash="goodDetail/"+$(this).attr("id")
 					})
 			myScroll.refresh();
+					},function(){
+					alert("获取配置信息失败")
+					})
+				
 				},function(){
 				alert("获取商品失败")
 				})

@@ -21,7 +21,8 @@
 							})
 						}
 						console.log(dealList)
-					var dealTemplate=_.template(data.tem[0])({data:dealList});
+					app.api.run("getConfig",function(con){
+						var dealTemplate=_.template(data.tem[0])({data:dealList,config:con});
 					$("#scroller").html(dealTemplate);
 			myScroll.refresh();	
 					$("#scroller").find("[D_type='sellButton']").unbind("touchstart").bind("touchstart",function(){
@@ -30,6 +31,10 @@
 					$("#scroller").find("[D_type='changeButton']").unbind("touchstart").bind("touchstart",function(){
 						window.location.hash="change/"+$(this).attr("D_data")
 						})
+						},function(){
+						alert("获取配置信息失败")
+						})
+					
 					},function(){
 					alert("获取交易信息失败")
 					})

@@ -45,3 +45,5 @@ app.api.add("adddeal","http://"+config.sour+":8888/",{model:"deal",action:"add"}
 app.api.add("editdeal","http://"+config.sour+":8888/",{model:"deal",action:"edit"},"get");
 /*获取交易记录*/
 app.api.add("getdealList","http://"+config.sour+":8888/",{model:"deal",action:"list"},"get");
+/*获取交易记录*/
+app.api.add("getConfig","http://"+config.sour+":8888/",{model:"config",action:"get"},"get");
