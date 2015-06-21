@@ -7,12 +7,12 @@
 		fn:function(data){
 			$("#leftButton").hide();
 			$("#centerTitle").html("星众众筹");
-			$("#rightButton").unbind("click").bind("click",function(){
+			$("#rightButton").unbind("tap").bind("tap",function(){
 				window.location.hash="register";
 				});
 			$("#scroller").html(data.tem[0]);
 			myScroll.refresh();
-			$("#scroller").find("#send").unbind("click").bind("click",function(){
+			$("#scroller").find("#send").unbind("tap").bind("tap",function(){
 				var sendData = {"userName":$("#scroller").find("#userName").val(),/*登录名/手机/邮箱*/
 				"passWord":$("#scroller").find("#userPass").val()}/*密码*/
 				app.api.run("login",sendData,function(rdata){

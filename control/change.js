@@ -8,7 +8,7 @@
 			$("#leftButton").hide();
 			$("#centerTitle").html("请确认转让");
 			$("#rightButton").html("返回");
-			$("#rightButton").unbind("click").bind("click",function(){
+			$("#rightButton").unbind("tap").bind("tap",function(){
 				window.history.go(-1)
 				});
 			function getproduct(deal){
@@ -23,7 +23,7 @@
 				$("#scroller").html(detailTemplate);
 			myScroll.refresh();
 			
-			$("#scroller").find("[D_type='changebutton']").unbind("click").bind("click",function(){
+			$("#scroller").find("[D_type='changebutton']").unbind("tap").bind("tap",function(){
 			function editdeal(){
 				app.apis.editdeal(deal,function(){
 				alert("转移成功");

@@ -8,7 +8,7 @@
 			$("#leftButton").hide();
 			$("#centerTitle").html("我的众筹");
 			$("#rightButton").html("返回");
-			$("#rightButton").unbind("click").bind("click",function(){
+			$("#rightButton").unbind("tap").bind("tap",function(){
 				window.history.go(-1)
 				});
 			function getDeal(product){
@@ -25,10 +25,10 @@
 						var dealTemplate=_.template(data.tem[0])({data:dealList,config:con});
 					$("#scroller").html(dealTemplate);
 			myScroll.refresh();	
-					$("#scroller").find("[D_type='sellButton']").unbind("touchstart").bind("touchstart",function(){
+					$("#scroller").find("[D_type='sellButton']").unbind("tap").bind("tap",function(){
 						window.location.hash="sell/"+$(this).attr("D_data")
 						})
-					$("#scroller").find("[D_type='changeButton']").unbind("touchstart").bind("touchstart",function(){
+					$("#scroller").find("[D_type='changeButton']").unbind("tap").bind("tap",function(){
 						window.location.hash="change/"+$(this).attr("D_data")
 						})
 						},function(){

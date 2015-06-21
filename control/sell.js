@@ -8,7 +8,7 @@
 			$("#leftButton").hide();
 			$("#centerTitle").html("请确认出售");
 			$("#rightButton").html("返回");
-			$("#rightButton").unbind("click").bind("click",function(){
+			$("#rightButton").unbind("tap").bind("tap",function(){
 				window.history.go(-1)
 				});
 			function getproduct(deal){
@@ -21,7 +21,7 @@
 				var detailTemplate=_.template(data.tem[0])({data:deal});
 				$("#scroller").html(detailTemplate);
 			myScroll.refresh();
-			$("#scroller").find("[D_type='sellbutton']").unbind("touchstart").bind("touchstart",function(){
+			$("#scroller").find("[D_type='sellbutton']").unbind("tap").bind("tap",function(){
 				if(app.cookies("user")){app.api.run("editdeal",deal,function(){
 					alert("交易成功")
 					window.location.hash="account";

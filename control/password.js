@@ -8,7 +8,7 @@
 			$("#leftButton").hide();
 			$("#centerTitle").html("重置密码");
 			$("#rightButton").html("返回");
-			$("#rightButton").unbind("click").bind("click",function(){
+			$("#rightButton").unbind("tap").bind("tap",function(){
 				window.history.go(-1)
 				});
 			$("#scroller").html(data.tem[0]);
@@ -22,7 +22,7 @@
 					sendData[$(this).attr("D_data")]=$(this).val();
 					})
 				})
-			$("#scroller").find("button").unbind("click").bind("click",function(){
+			$("#scroller").find("button").unbind("tap").bind("tap",function(){
 				if(sendData["newKey"]&&sendData["newKey"]==sendData["newKey2"]){
 					app.api.run("resetKey",sendData,function(){
 						alert("修改成功")

@@ -8,7 +8,7 @@
 			if(!app.cookies("user")){
 				$("#leftButton").show();
 			$("#leftButton").html("登录");
-			$("#leftButton").unbind("click").bind("click",function(){
+			$("#leftButton").unbind("tap").bind("tap",function(){
 				window.location.hash="index";
 				});
 				}else{
@@ -17,7 +17,7 @@
 			
 			$("#centerTitle").html("经营理念");
 			$("#rightButton").html("返回");
-			$("#rightButton").unbind("click").bind("click",function(){
+			$("#rightButton").unbind("tap").bind("tap",function(){
 				window.history.go(-1)
 				});
 			app.api.run("getpromotion",null,function(promotion){

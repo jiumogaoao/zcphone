@@ -8,7 +8,7 @@
 			$("#leftButton").hide();
 			$("#centerTitle").html("请填写基本信息并注册");
 			$("#rightButton").html("登录");
-			$("#rightButton").unbind("click").bind("click",function(){
+			$("#rightButton").unbind("tap").bind("tap",function(){
 				window.location.hash="index";
 				});
 			var code="";
@@ -40,7 +40,7 @@
 			var getcodeTime;
 		  function getcode(){
 			  $("#scroller").find("#btnSendmsg").html("获取验证码");
-			  $("#scroller").find("#btnSendmsg").unbind("click").bind("click",function(){
+			  $("#scroller").find("#btnSendmsg").unbind("tap").bind("tap",function(){
 				  
 			  app.api.run("getBindCode",{"type":"phone",number:$(this).parents("form").find("[D_data='phone']").val()},function(data){
 				  console.log(data)
@@ -90,7 +90,7 @@
 					  alert("手机已注册")
 					  })
 			  });
-		$("#scroller").find("#registerSend").unbind("click").bind("click",function(){
+		$("#scroller").find("#registerSend").unbind("tap").bind("tap",function(){
 			if(!userCheck){
 				alert("请填写唯一的用户名")
 				return false;

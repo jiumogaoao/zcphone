@@ -8,7 +8,7 @@
 			$("#leftButton").hide();
 			$("#centerTitle").html("绑定邮箱");
 			$("#rightButton").html("返回");
-			$("#rightButton").unbind("click").bind("click",function(){
+			$("#rightButton").unbind("tap").bind("tap",function(){
 				window.history.go(-1)
 				});
 			var user=app.cookies("user")
@@ -19,11 +19,11 @@
 				myScroll.refresh();
 				function sendBind(){
 				$("#scroller").find("button").html("绑定")	
-				$("#scroller").find("button").unbind("touchstart").bind("touchstart",function(){
+				$("#scroller").find("button").unbind("tap").bind("tap",function(){
 					
 					var sendData={"type":"email","number":$("#scroller").find("input").val()}
 					app.api.run("getBindCode",sendData,function(){
-						$("#scroller").find("button").unbind("touchstart")
+						$("#scroller").find("button").unbind("tap")
 						var sendTime=30;
 					var sendI=setInterval(function(){
 						$("#scroller").find("button").html(sendTime+"秒后可重新发送");

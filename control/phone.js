@@ -8,7 +8,7 @@
 			$("#leftButton").hide();
 			$("#centerTitle").html("绑定手机");
 			$("#rightButton").html("返回");
-			$("#rightButton").unbind("click").bind("click",function(){
+			$("#rightButton").unbind("tap").bind("tap",function(){
 				window.history.go(-1)
 				});
 			var user=app.cookies("user")
@@ -18,7 +18,7 @@
 			var code=false;
 			function sendBind(){
 			$("#scroller").find("#btnSendmsg").html("获取验证码")
-			$("#scroller").find("#btnSendmsg").unbind("touchstart").bind("touchstart",function(){
+			$("#scroller").find("#btnSendmsg").unbind("tap").bind("tap",function(){
 				app.api.run("getBindCode",{"type":"phone","number":$("#phoneNumber").val()},function(data){
 					$("#scroller").find("#btnSendmsg").unbind("touchstart")
 					alert("信息已发送")
@@ -40,7 +40,7 @@
 				})
 			}	
 			sendBind()
-			$("#scroller").find(".bankcard_confirm").unbind("touchstart").bind("touchstart",function(){
+			$("#scroller").find(".bankcard_confirm").unbind("tap").bind("tap",function(){
 				if(code&&code==$("#msgValidCode").val()){
 					app.api.run("bind",{
 					"type":"phone","id":user.id,"code":code,"number":$("#phoneNumber").val()

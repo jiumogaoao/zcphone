@@ -8,7 +8,7 @@
 			$("#leftButton").hide();
 			$("#centerTitle").html("请确认购买");
 			$("#rightButton").html("返回");
-			$("#rightButton").unbind("click").bind("click",function(){
+			$("#rightButton").unbind("tap").bind("tap",function(){
 				window.history.go(-1)
 				});
 			app.api.run("getProduct",null,function(product){
@@ -28,7 +28,7 @@
 				$("#scroller").html(detailTemplate);
 			myScroll.refresh();
 			
-			$("#scroller").find("button").unbind("touchstart").bind("touchstart",function(){
+			$("#scroller").find("button").unbind("tap").bind("tap",function(){
 				app.api.run("adddeal",dealData,function(){
 					alert("交易成功")
 					window.location.hash="goodList"

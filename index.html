@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<title>无标题文档</title>
+<title>星众众筹</title>
 <link rel="stylesheet"
 	href="bootstrap/css/bootstrap.min.css">
 
@@ -21,6 +21,7 @@
 <link rel="stylesheet"
 	href="bootstrap/fonts/glyphicons-halflings-regular.woff2">
 <script src="js/jquery-2.1.0.js"></script>
+<script src="js/touch.js"></script>
 <script src="js/underscore-min.js"></script>
 <script src="js/moment.js"></script>
 <script src="js/cookies.min.js"></script>
@@ -230,20 +231,22 @@ var myScroll = new IScroll('#middle', { scrollbars: true,
 		myScroll.refresh();
 	$("[D_type='nav']").each(
 		function(){
-			$(this).unbind("touchstart").bind("touchstart",function(e){
-				e.stopPropagation();
-				$(".navList").hide();
-				$(this).parents(".col-xs-4").find(".navList").show();
-			})
+			$(this).unbind("tap").bind("tap",function(ev){
+    ev.preventDefault();
+	$(".navList").hide();
+				$(ev.target).parents(".col-xs-4").find(".navList").show();
+});
 		})
 	$("[D_type='navPoint']").each(
 		function(){
-			$(this).unbind("touchstart").bind("touchstart",function(e){
-				$(this).parents(".col-xs-4").find("[D_type='nav']").html($(this).html());
-				window.location.hash=$(this).attr("D_data")
-			})
+			$(this).unbind("tap").bind("tap",function(ev){
+				 ev.preventDefault();
+				$(ev.target).parents(".col-xs-4").find("[D_type='nav']").html($(ev.target).html());
+				window.location.hash=$(ev.target).attr("D_data")
+});
 		})
-	$("body").on("touchstart",function(){
+	
+	$("body").unbind("touchstart").bind("touchstart",function(){
 		$(".navList").hide();
 		})
 </script>

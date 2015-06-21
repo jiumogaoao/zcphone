@@ -8,7 +8,7 @@
 			$("#leftButton").hide();
 			$("#centerTitle").html("基本信息");
 			$("#rightButton").html("返回");
-			$("#rightButton").unbind("click").bind("click",function(){
+			$("#rightButton").unbind("tap").bind("tap",function(){
 				window.history.go(-1)
 				});
 			var user=app.cookies("user")
@@ -24,7 +24,7 @@
 			);
 			$("#scroller").find("[D_type='send']").each(
 				function(){
-					$(this).unbind("click").bind("click",function(){
+					$(this).unbind("tap").bind("tap",function(){
 						app.api.run("editClient",user,function(){
 							alert("修改成功")
 							app.cookies("user",user)

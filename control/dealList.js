@@ -8,7 +8,7 @@
 			$("#leftButton").hide();
 			$("#centerTitle").html("收支记录");
 			$("#rightButton").html("返回");
-			$("#rightButton").unbind("click").bind("click",function(){
+			$("#rightButton").unbind("tap").bind("tap",function(){
 				window.history.go(-1)
 				});
 			function getDeal(product){

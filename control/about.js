@@ -8,7 +8,7 @@
 			if(!app.cookies("user")){
 				$("#leftButton").show();
 			$("#leftButton").html("登录");
-			$("#leftButton").unbind("click").bind("click",function(){
+			$("#leftButton").unbind("tap").bind("tap",function(){
 				window.location.hash="index";
 				});
 				}else{
@@ -17,12 +17,12 @@
 			
 			$("#centerTitle").html("关于我们");
 			$("#rightButton").html("注册");
-			$("#rightButton").unbind("click").bind("click",function(){
+			$("#rightButton").unbind("tap").bind("tap",function(){
 				window.location.hash="register";
 				});
 			$("#scroller").html(data.tem[0]);
 			$("#scroller").find("[D_type='navPoint']").each(function(){
-				$(this).unbind("touchstart").bind("touchstart",function(){
+				$(this).unbind("tap").bind("tap",function(){
 					window.location.hash=$(this).attr("D_data");
 					})
 				});

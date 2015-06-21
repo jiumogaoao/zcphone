@@ -9,13 +9,13 @@
 					$("#leftButton").hide();
 			$("#centerTitle").html("个人中心");
 			$("#rightButton").html("返回");
-			$("#rightButton").unbind("click").bind("click",function(){
+			$("#rightButton").unbind("tap").bind("tap",function(){
 				window.history.go(-1)
 				});
 			if(app.cookies("user")){
 				$("#scroller").html(data.tem[0]);
 			$("#scroller").find("[D_type='navPoint']").each(function(){
-				$(this).unbind("touchstart").bind("touchstart",function(){
+				$(this).unbind("tap").bind("tap",function(){
 					window.location.hash=$(this).attr("D_data");
 					})
 				});

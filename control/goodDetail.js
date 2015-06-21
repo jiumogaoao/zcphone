@@ -8,7 +8,7 @@
 			if(!app.cookies("user")){
 				$("#leftButton").show();
 			$("#leftButton").html("登录");
-			$("#leftButton").unbind("click").bind("click",function(){
+			$("#leftButton").unbind("tap").bind("tap",function(){
 				window.location.hash="index";
 				});
 				}else{
@@ -17,7 +17,7 @@
 			
 			$("#centerTitle").html("产品详情");
 			$("#rightButton").html("返回");
-			$("#rightButton").unbind("click").bind("click",function(){
+			$("#rightButton").unbind("tap").bind("tap",function(){
 				window.history.go(-1)
 				});
 			app.api.run("getProduct",null,function(product){
@@ -27,7 +27,7 @@
 				$("#scroller").html(detailTemplate);
 			myScroll.refresh();
 			$('.carousel').carousel()
-			$("#scroller").find("[D_type='buybutton']").unbind("touchstart").bind("touchstart",function(){
+			$("#scroller").find("[D_type='buybutton']").unbind("tap").bind("tap",function(){
 				if(app.cookies("user")){
 		window.location.hash="buy/"+data.id+"/"+$("#crowdCount").val();
 		}else{
